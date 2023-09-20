@@ -1,0 +1,51 @@
+.MenuOptions .img-container {
+    display:flex;
+    margin: 5%;
+    max-width: 100%;
+    justify-content: space-between;
+    overflow-x:auto;
+    position: relative;
+    cursor: grab;      /*cambia cursor a agarre*/
+    user-select: none; /*no agarra texto*/
+    scrollbar-width: none;
+    transition: 10s;
+    scroll-behavior:smooth;
+}
+
+.scrollbar-normal {
+    scrollbar-width: auto;
+}
+
+.MenuOptions .flecha {
+    position:absolute;
+    font-size: xx-large;
+    color: black;
+    background-color: rgba(255, 235, 205, 0.6);
+    display:inline-flex;
+    margin: 5%;
+    max-width: 100%;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1;
+    height: 5%;
+    width: 5%;
+    border-radius: 50% / 100%;
+}
+
+.flecha-der {
+    top: 40%;
+    right: 0;
+    transform: scaleX(-1);
+}
+
+.flecha-izq {
+    top: 40%;
+    left: 0;
+}
+
+.MenuOptions img {
+    height:550px;
+    width:auto;
+    margin: 2%;
+    cursor: pointer;
+}

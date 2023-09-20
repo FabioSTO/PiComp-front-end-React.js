@@ -1,0 +1,23 @@
+.Top .img-container {
+    display:flex;
+    margin: 5%;
+    max-width: 100%;
+    justify-content: space-between;
+    overflow-x:auto;
+    position: relative;
+    cursor: grab;      /*cambia cursor a agarre*/
+    user-select: none; /*no agarra texto*/
+    scrollbar-width: none;
+    transition: 10s;
+    scroll-behavior:smooth;
+}
+
+.Top img {
+    height:400px;
+    width:auto;
+    margin: 3%;
+}
+
+.TopText {
+    color: antiquewhite;
+}

@@ -1,0 +1,73 @@
+.compForm {
+  background-color: rgb(46, 43, 43);
+  margin: 5%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.compForm .textInput {
+  margin: 3%;
+}
+
+.text {
+  color: antiquewhite;
+}
+
+.imgContainer {
+  background-color: antiquewhite;
+  padding: 1%;
+  max-width:fit-content;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#imageComp {
+  max-height: 750px;
+  max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+}
+
+#dragNdrop {
+  justify-content: center;
+  background-color: rgb(84, 83, 81);
+  padding: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  border-color: antiquewhite;
+  border-width: 1px;
+  border: dashed;
+}
+
+#submit {
+  margin-top: 3%;
+}
+
+.boton {
+  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  padding: 0 1rem;
+  transition: box-shadow .2s ease-in-out;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  
+}
+
+.boton:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.boton:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}

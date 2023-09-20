@@ -1,0 +1,36 @@
+.Banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: Georgia, serif;
+  background-color:rgb(41, 40, 40);
+  color: rgb(190, 172, 145);
+  font-size: 80px;
+  text-shadow: 1px 3px black;
+  padding-bottom: 10px;
+  border-bottom: solid;
+  border-color: rgb(0, 0, 0);
+  border-width: 1px;
+  box-shadow: 5px;
+}
+
+.title {
+  margin-left: 3%;
+}
+
+.username {
+  font-size: 30px;
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.logo { 
+  margin-right: 3%;
+  margin-left: 3%;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 50px;
+  border-radius: 100px;
+  cursor: pointer;
+}
