@@ -1,4 +1,4 @@
 # PiComp
-Intento de creación de app
+Creación de app web de publicación, valoración y competición de imágenes.
 
-React Native for its front-end and Python, Django, and PostgreSQL for its backend
+React (front-end), Node (back-end) and MySql (database).
