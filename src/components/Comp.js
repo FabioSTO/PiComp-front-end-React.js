@@ -26,7 +26,7 @@ function Comp() {
 
   return (
     <div>
-      {!isLogged && <form className='compForm' id='compForm' onSubmit={handleImageSubmit}>
+      {isLogged && <form className='compForm' id='compForm' onSubmit={handleImageSubmit}>
 
       <label className='text'> Nombre de la foto:
         <input className='textInput'
@@ -52,7 +52,10 @@ function Comp() {
 
       </form>}
 
-      {isLogged && <div></div> }
+      {!isLogged && <form className='compForm' id='compForm'>
+        <h1 className='title-text'> Votación:</h1>
+        
+      </form> }
       
     </div>
     
