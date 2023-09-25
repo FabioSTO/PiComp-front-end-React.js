@@ -23,7 +23,7 @@ const submitImage = async (imageName, imageComp, username) => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({imageName, imageBase64, username})
+      body: JSON.stringify({imageName, imageComp: imageBase64, username})
     });
 
     if (response.ok) {
