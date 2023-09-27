@@ -4,12 +4,26 @@ const endpointUrl = apiUrl + '/users/registerAccount'; // http://localhost:3001/
 
 const registerAccount = async (name, email, password, profilePic) => {
   try {
+    // Crear una promesa para leer la imagen en Base64
+    const readImage = () => {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          resolve(reader.result);
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(profilePic);
+      });
+    };
+
+    const profilePicBase64 = await readImage(); // Lee imagen en Base64
+
     const response = await fetch(endpointUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ name, email, password, profilePic})
+      body: JSON.stringify({ name, email, password, profilePic: profilePicBase64 })
     });
 
     if (response.ok) {

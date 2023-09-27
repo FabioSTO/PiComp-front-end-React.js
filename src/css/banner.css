@@ -30,7 +30,10 @@
   margin-left: 3%;
   margin-top: auto;
   margin-bottom: auto;
-  height: 50px;
+  height: 60px;
+  width: 60px;
   border-radius: 100px;
   cursor: pointer;
+  border-color: rgb(190, 172, 145);
+  border: 2px solid;
 }

@@ -17,7 +17,8 @@ const loginAccount = async (email, password) => {
       const result = await response.json();
       console.log(result.message); 
       console.log(result.username);
-      return { success: true, username: result.username, profilePic: result.profilePic };
+      return { success: true, username: result.username, profilePic: result.profilePic, 
+        email: result.email, submitted: result.submitted, voted: result.submitted};
 
     } else { console.error('Error de login'); return { success: false };}
 

@@ -9,10 +9,14 @@ const UserContext = createContext();
 export const UserProvider = ({ children }) => {
   const [username, setUsername] = useState('');
   const [isLogged, setIsLogged] = useState(false);
-  const [profilePic, setProfilePic] = useState(null)
+  const [profilePic, setProfilePic] = useState(null);
+  const [email, setEmail] = useState('');
+  const [submitted, setSubmitted] = useState('');
+  const [voted, setVoted] = useState('');
 
   return (
-    <UserContext.Provider value={{ username, setUsername, isLogged, setIsLogged, profilePic, setProfilePic}}>
+    <UserContext.Provider value={{ username, setUsername, isLogged, setIsLogged, 
+    profilePic, setProfilePic, email, setEmail, submitted, setSubmitted, voted, setVoted}}>
       {children}
     </UserContext.Provider>
   )

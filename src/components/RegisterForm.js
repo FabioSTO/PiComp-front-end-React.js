@@ -13,8 +13,7 @@ function RegisterForm() {
 
   const handleRegisterAccount = (e) => {
     e.preventDefault();
-    registerAccount(name, email, password, profilePic); // Por ahora que solo mande el nombre
-    console.log(profilePic)
+    registerAccount(name, email, password, profilePic);
   }
 
   const handleImageChange = (e) => {

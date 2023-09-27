@@ -4,12 +4,13 @@ import controlImageChange from '../hooks/controlImageChange';
 import controlImageDrop from '../hooks/controlImageDrop';
 import { useUserContext } from '../context/UserContext';
 import submitImage from '../hooks/submitImage';
+import showImagesToVote from '../hooks/showImagesToVote';
 
 function Comp() {
   const [name, setName] = useState('');
   const [imageComp, setImage] = useState(null);
 
-  const { username, isLogged, profilePic } = useUserContext();
+  const { username, isLogged, profilePic, email, submitted, voted } = useUserContext();
 
   const handleImageChange = (e) => {
     controlImageChange(e, setImage);
@@ -24,8 +25,16 @@ function Comp() {
     submitImage(name, imageComp, username);
   }
 
+  const handleShowImagesToVote = (e) => {
+    showImagesToVote();
+  }
+
+
   return (
     <div>
+
+      {/* LOGUEADO / NO SUBMITTED / VOTED */}
+
       {isLogged && <form className='compForm' id='compForm' onSubmit={handleImageSubmit}>
 
       <label className='text'> Nombre de la foto:
@@ -52,8 +61,24 @@ function Comp() {
 
       </form>}
 
+      {/* LOGUEADO / SUBMITTED / NO VOTED */}
+
       {!isLogged && <form className='compForm' id='compForm'>
-        <h1 className='title-text'> Votación:</h1>
+        <h1 className='title-text'> Inicia sesión para participar </h1>
+        
+      </form> }
+
+      {/* LOGUEADO / SUBMITTED / VOTED */}
+
+      {!isLogged && <form className='compForm' id='compForm'>
+        <h1 className='title-text'> Inicia sesión para participar </h1>
+        
+      </form> }
+
+      {/* NO LOGUEADO */}
+
+      {!isLogged && <form className='compForm' id='compForm'>
+        <h1 className='title-text'> Inicia sesión para participar </h1>
         
       </form> }
       
