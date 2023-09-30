@@ -11,7 +11,7 @@ function Comp() {
   const [imageComp, setImage] = useState(null);
   const [imageBlob, setImageBlob] = useState(null);
 
-  const { username, isLogged, profilePic, email, submitted, voted } = useUserContext();
+  const { username, isLogged, profilePic, email, setSubmitted, submitted, voted } = useUserContext();
 
   const handleImageChange = (e) => {
     controlImageChange(e, setImage, setImageBlob);
@@ -24,6 +24,7 @@ function Comp() {
   const handleImageSubmit = (e) => {
     e.preventDefault();
     submitImage(name, imageComp, username);
+    setSubmitted(true);
   }
 
   const handleShowImagesToVote = (e) => {
@@ -36,7 +37,7 @@ function Comp() {
 
       {/* LOGUEADO / NO SUBMITTED / VOTED */}
 
-      {isLogged && <form className='compForm' id='compForm' onSubmit={handleImageSubmit}>
+      {isLogged && !submitted && <form className='compForm' id='compForm' onSubmit={handleImageSubmit}>
 
       <label className='text'> Nombre de la foto:
         <input className='textInput'
@@ -64,15 +65,15 @@ function Comp() {
 
       {/* LOGUEADO / SUBMITTED / NO VOTED */}
 
-      {!isLogged && <form className='compForm' id='compForm'>
-        <h1 className='title-text'> Inicia sesión para participar </h1>
+      {isLogged && submitted && !voted && <form className='compForm' id='compForm'>
+        <h1 className='title-text'> Comienza a votar cuando quieras </h1>
         
       </form> }
 
       {/* LOGUEADO / SUBMITTED / VOTED */}
 
-      {!isLogged && <form className='compForm' id='compForm'>
-        <h1 className='title-text'> Inicia sesión para participar </h1>
+      {!isLogged && submitted && voted && <form className='compForm' id='compForm'>
+        <h1 className='title-text'> Espera a que acaben las votaciones </h1>
         
       </form> }
 
