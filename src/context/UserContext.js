@@ -7,6 +7,7 @@ import { createContext, useContext, useState } from "react";
 const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
+  const [id, setId] = useState('');
   const [username, setUsername] = useState('');
   const [isLogged, setIsLogged] = useState(false);
   const [profilePic, setProfilePic] = useState(null);
@@ -15,7 +16,7 @@ export const UserProvider = ({ children }) => {
   const [voted, setVoted] = useState('');
 
   return (
-    <UserContext.Provider value={{ username, setUsername, isLogged, setIsLogged, 
+    <UserContext.Provider value={{ id, setId, username, setUsername, isLogged, setIsLogged, 
     profilePic, setProfilePic, email, setEmail, submitted, setSubmitted, voted, setVoted}}>
       {children}
     </UserContext.Provider>

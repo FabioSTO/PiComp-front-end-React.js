@@ -14,6 +14,7 @@ const showImagesToVote = async () => {
     if (response.ok) {
       const result = await response.json();
       console.log(result.allImagesDistributed)
+      
       return { success: true, images: result.allImagesDistributed}
     } else { console.error('Error al obtener distribución'); return { success: false };}
 

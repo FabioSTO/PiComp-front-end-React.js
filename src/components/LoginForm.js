@@ -11,7 +11,7 @@ function LoginForm() {
   const [password, setPassword] = useState('');
   const [showRegister, setShowRegister] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
-  const { setUsername, setIsLogged, setProfilePic, 
+  const { setId, setUsername, setIsLogged, setProfilePic, 
     setEmail, setSubmitted, setVoted, isLogged } = useUserContext();
 
   const navigate = useNavigate();
@@ -30,6 +30,7 @@ function LoginForm() {
     e.preventDefault();
     const loginResult = await loginAccount(email, password);
     if (loginResult.success) {
+      setId(loginResult.id);
       setUsername(loginResult.username); 
       setIsLogged(loginResult.success);
       setProfilePic(loginResult.profilePic);
