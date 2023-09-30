@@ -9,15 +9,16 @@ import showImagesToVote from '../hooks/showImagesToVote';
 function Comp() {
   const [name, setName] = useState('');
   const [imageComp, setImage] = useState(null);
+  const [imageBlob, setImageBlob] = useState(null);
 
   const { username, isLogged, profilePic, email, submitted, voted } = useUserContext();
 
   const handleImageChange = (e) => {
-    controlImageChange(e, setImage);
+    controlImageChange(e, setImage, setImageBlob);
   };
 
   const handleImageDrop = (e) => {
-    controlImageDrop(e, setImage);
+    controlImageDrop(e, setImage, setImageBlob);
   };
 
   const handleImageSubmit = (e) => {
@@ -53,7 +54,7 @@ function Comp() {
       {imageComp && (<>
         <button className='boton' onClick={() => setImage(null)} >Cambiar imagen</button>
         <div className='imgContainer'>
-          <img id='imageComp' src={imageComp} alt='Imagen seleccionada'/>
+          <img id='imageComp' src={imageBlob} alt='Imagen seleccionada'/>
         </div>
       </>)}
 
