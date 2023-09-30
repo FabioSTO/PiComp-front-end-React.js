@@ -28,6 +28,7 @@ function Comp() {
   }
 
   const handleShowImagesToVote = (e) => {
+    e.preventDefault();
     showImagesToVote();
   }
 
@@ -67,12 +68,13 @@ function Comp() {
 
       {isLogged && submitted && !voted && <form className='compForm' id='compForm'>
         <h1 className='title-text'> Comienza a votar cuando quieras </h1>
+        <button className='boton' onClick={handleShowImagesToVote} >VOTAR</button>
         
       </form> }
 
       {/* LOGUEADO / SUBMITTED / VOTED */}
 
-      {!isLogged && submitted && voted && <form className='compForm' id='compForm'>
+      {isLogged && submitted && voted && <form className='compForm' id='compForm'>
         <h1 className='title-text'> Espera a que acaben las votaciones </h1>
         
       </form> }
