@@ -123,3 +123,47 @@
   max-height: 100%;
   cursor: pointer;
 }
+
+.crown {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+
+.Vote .crownN-container {
+  display:flex;
+  max-width: 100%;
+  justify-content: space-between;
+  overflow-x:auto;
+  position: relative;
+  cursor: grab;      /*cambia cursor a agarre*/
+  user-select: none; /*no agarra texto*/
+  scrollbar-width: none;
+  transition: 10s;
+  scroll-behavior:smooth;
+}
+
+.Vote .crownOff-container {
+  display:flex;
+  max-width: 100%;
+  justify-content: space-between;
+  overflow-x:auto;
+  position: relative;
+  cursor: grab;      /*cambia cursor a agarre*/
+  user-select: none; /*no agarra texto*/
+  scrollbar-width: none;
+  transition: 10s;
+  scroll-behavior:smooth;
+}
+
+#crownOffabel {
+  display: none;
+}
+
+.crownLabel {
+  cursor: pointer;
+}
+
+.crownLabel img:hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
