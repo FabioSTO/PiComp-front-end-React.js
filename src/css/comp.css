@@ -124,6 +124,11 @@
   cursor: pointer;
 }
 
+.crownGold {
+  max-width: 200px;
+  max-height: 200px;
+}
+
 .crown {
   max-width: 200px;
   max-height: 200px;
@@ -134,7 +139,7 @@
   display:flex;
   max-width: 100%;
   justify-content: space-between;
-  overflow-x:auto;
+  overflow-x:visible;
   position: relative;
   cursor: grab;      /*cambia cursor a agarre*/
   user-select: none; /*no agarra texto*/
@@ -164,6 +169,14 @@
   cursor: pointer;
 }
 
-.crownLabel img:hover {
+.crownLabel img.highlighted {
   box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
 }
+
+/* Resaltado */
+.crownGold.highlighted {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(230, 206, 50, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+
+
