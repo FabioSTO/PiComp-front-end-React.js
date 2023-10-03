@@ -23,8 +23,10 @@ function Comp() {
   const [showVote, setShowVote] = useState(false); // Mostrar fotos para votar
   const [showFullScreenImage, setShowFullScreenImage] = useState(false); // Para hacer grande la foto que pulsas
   const [selectedImage, setSelectedImage] = useState(null); // Para hacer grande la foto que pulsas
-  const [crowned, setCrowned] = useState(null); // Para marcar si fue coronado
   const [crownChosen, setCrownChosen] = useState(null); // Para especificar la corona que se selecciona
+  const [crowned1, setCrowned1] = useState({ src: crown1, id: null}); // PROBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAS
+  const [crowned2, setCrowned2] = useState({ src: crown2, id: null}); // PROBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAS
+  const [crowned3, setCrowned3] = useState({ src: crown3, id: null}); // PROBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAS
 
   const { id, username, isLogged, profilePic, email, setSubmitted, submitted, voted } = useUserContext();
 
@@ -44,8 +46,21 @@ function Comp() {
   }
 
   const handleCrownDrop = (e) => {  // Para soltar la coronita y marcarlo
-    controlCrownDrop(e, setCrowned, crownChosen);
+    controlCrownDrop(e, setCrowned1, setCrowned2, setCrowned3, crowned1, crowned2, crowned3, crownChosen);
+
   };
+
+  const handleIsCrowned = (crown_X) => {
+    if (crown_X === crowned1.id) {
+      return crowned1.src;
+    } if (crown_X === crowned2.id) {
+      return crowned2.src;
+    } if (crown_X === crowned3.id) {
+      return crowned3.src;
+    }
+
+    return crownOff;
+  }
 
   const handleCrownChange = (e) => {  // Para escoger la coronita y marcarlo
 
@@ -133,25 +148,22 @@ function Comp() {
           </div>
           <div className='crownOff-container'>
             <div id='crownOff'>
-                <label htmlFor="crownOffabel" className='crownLabel' onChange={handleCrownChange} onDrop={handleCrownDrop} onDragOver={(e) => e.preventDefault()}>       
-                  {!crowned && <img className='crown' src={crownOff} alt='crown'/>}
-                  {crowned && <img className='crown' src={crowned} alt='crown'/>}
+                <label id='crown_1' htmlFor="crownOffabel" className='crownLabel' onChange={handleCrownChange} onDrop={handleCrownDrop} onDragOver={(e) => e.preventDefault()}>         
+                  <img className='crown' id='crown_1' src={handleIsCrowned('crown_1')} alt='crown'/>
                 </label>
                 <img src={top2} alt='top2' onClick={() => handleImageClick(top2)}/>
                 <input className='text' id='crownOffabel' type='file' accept='image/*' onChange={handleCrownChange} onDrop={handleCrownDrop} onDragOver={(e) => e.preventDefault()}/>     {/* OCULTAR EL INPUT PERO DEJAR EL LABEL PARA DROPEAR LA CORONA */}
             </div>
             <div id='crownOff'>
-                <label htmlFor="crownOffabel" className='crownLabel' onChange={handleCrownChange} onDrop={handleCrownDrop} onDragOver={(e) => e.preventDefault()}>       
-                  {!crowned && <img className='crown' src={crownOff} alt='crown'/>}
-                  {crowned && <img className='crown' src={crowned} alt='crown'/>}
+                <label id='crown_2' htmlFor="crownOffabel" className='crownLabel' onChange={handleCrownChange} onDrop={handleCrownDrop} onDragOver={(e) => e.preventDefault()}>       
+                  <img className='crown' id='crown_2' src={handleIsCrowned('crown_2')} alt='crown'/>
                 </label>
                 <img src={top1} alt='top1' onClick={() => handleImageClick(top1)}/>
                 <input className='text' id='crownOffabel' type='file' accept='image/*' onChange={handleCrownChange} onDrop={handleCrownDrop} onDragOver={(e) => e.preventDefault()}/>     {/* OCULTAR EL INPUT PERO DEJAR EL LABEL PARA DROPEAR LA CORONA */}
             </div>
             <div id='crownOff'>
-                <label htmlFor="crownOffabel" className='crownLabel' onChange={handleCrownChange} onDrop={handleCrownDrop} onDragOver={(e) => e.preventDefault()}>       
-                  {!crowned && <img className='crown' src={crownOff} alt='crown'/>}
-                  {crowned && <img className='crown' src={crowned} alt='crown'/>}
+                <label id='crown_3' htmlFor="crownOffabel" className='crownLabel' onChange={handleCrownChange} onDrop={handleCrownDrop} onDragOver={(e) => e.preventDefault()}>       
+                  <img className='crown' id='crown_3' src={handleIsCrowned('crown_3')} alt='crown'/>
                 </label>
                 <img src={top3} alt='top3' onClick={() => handleImageClick(top3)}/>
                 <input className='text' id='crownOffabel' type='file' accept='image/*' onChange={handleCrownChange} onDrop={handleCrownDrop} onDragOver={(e) => e.preventDefault()}/>     {/* OCULTAR EL INPUT PERO DEJAR EL LABEL PARA DROPEAR LA CORONA */}

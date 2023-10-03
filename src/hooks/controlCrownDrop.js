@@ -1,17 +1,30 @@
 // Controla la subida de la coronita al DROPEARLA
-import crown1 from '../img/crown1.png';
-import crown2 from '../img/crown2.png';
-import crown3 from '../img/crown3.png';
 
-const controlCrownDrop = (e, setCrowned, crownChosen) => {
+const controlCrownDrop = (e, setCrowned1, setCrowned2, setCrowned3, crowned1, crowned2, crowned3, crownChosen) => {
   e.preventDefault();
+  const id = e.target.getAttribute('id');
 
-  if (crownChosen === "crown1") {
-    setCrowned(crown1);
+  if (crownChosen === "crown1") {   
+    if (crowned2.id === id) {               // Pone a null las otras ids que tengan esa corona concreta
+      setCrowned2({...crowned2, id: null});
+    } if (crowned3.id === id) {
+      setCrowned3({...crowned3, id: null});
+    }
+    setCrowned1({...crowned1, id: id});
   } else if (crownChosen === "crown2") {
-    setCrowned(crown2);
+    if (crowned1.id === id) {               // Pone a null las otras ids que tengan esa corona concreta
+      setCrowned1({...crowned1, id: null});
+    } if (crowned3.id === id) {
+      setCrowned3({...crowned3, id: null});
+    }
+    setCrowned2({...crowned2, id: id});
   } else if (crownChosen === "crown3") {
-    setCrowned(crown3);
+    if (crowned1.id === id) {               // Pone a null las otras ids que tengan esa corona concreta
+      setCrowned1({...crowned1, id: null});
+    } if (crowned1.id === id) {
+      setCrowned1({...crowned1, id: null});
+    }
+    setCrowned3({...crowned3, id: id});
   }
 };
 

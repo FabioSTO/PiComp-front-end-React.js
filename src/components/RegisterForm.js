@@ -18,8 +18,7 @@ function RegisterForm() {
 
   const handleRegisterAccount = (e) => {
     e.preventDefault();
-    registerAccount(name, email, password, profilePic);
-    setRegistered(true);
+    registerAccount(name, email, password, profilePic, setRegistered);
   }
 
   const handleImageChange = (e) => {

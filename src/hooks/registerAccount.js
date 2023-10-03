@@ -2,7 +2,7 @@ import { apiUrl } from "../development";
 
 const endpointUrl = apiUrl + '/users/registerAccount'; // http://localhost:3001/users/registerAccount
 
-const registerAccount = async (name, email, password, profilePic) => {
+const registerAccount = async (name, email, password, profilePic, setRegistered) => {
   try {
     // Crear una promesa para leer la imagen en Base64
     const readImage = () => {
@@ -27,7 +27,7 @@ const registerAccount = async (name, email, password, profilePic) => {
     });
 
     if (response.ok) {
-
+      setRegistered(true);
       const result = await response.text();
       console.log(result); // Respuesta del servidor
 
