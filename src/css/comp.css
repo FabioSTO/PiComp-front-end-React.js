@@ -94,12 +94,6 @@
   scroll-behavior:smooth;
 }
 
-.Vote img {
-  height:400px;
-  width:auto;
-  margin: 3%;
-}
-
 .VoteText {
   color: antiquewhite;
 }
@@ -140,33 +134,80 @@
   max-width: 100%;
   justify-content: space-between;
   overflow-x:visible;
-  position: relative;
+  position: sticky;
+  top: 0;
+  background-color: rgb(46, 43, 43);;
   cursor: grab;      /*cambia cursor a agarre*/
   user-select: none; /*no agarra texto*/
   scrollbar-width: none;
   transition: 10s;
   scroll-behavior:smooth;
+  z-index: 999;
 }
 
 .Vote .crownOff-container {
   display:flex;
+  flex-direction: row;
   max-width: 100%;
   justify-content: space-between;
   overflow-x:auto;
   position: relative;
   cursor: grab;      /*cambia cursor a agarre*/
   user-select: none; /*no agarra texto*/
-  scrollbar-width: none;
   transition: 10s;
   scroll-behavior:smooth;
+  background-color: rgba(44, 43, 43, 0.5);
+}
+
+.Vote .crownOff-container.column {
+  display:flex;
+  flex-direction: column;
+  max-width: 100%;
+  justify-content: space-between;
+  overflow-x:auto;
+  position: relative;
+  cursor: grab;      /*cambia cursor a agarre*/
+  user-select: none; /*no agarra texto*/
+  transition: 10s;
+  scroll-behavior:smooth;
+  background-color: rgba(44, 43, 43, 0.5);
+}
+
+.Vote .crownOff-container #imagesUnderCrown {
+  max-width: auto;
+  max-height: 100%;
+  margin-right: 1vw;
+  border: #000000 solid 1px;
+  height:400px;
+  margin-bottom: 4%;
+}
+
+.Vote .crownOff-container.column #imagesUnderCrown {
+  max-width: 90%;
+  height:auto;
+  max-height: 100%;
+  margin-right: 1vw;
+  margin-bottom: 1vw;
+  border: #000000 solid 1px;
+  
+}
+
+#crownOff {
+  background-color: rgba(33, 32, 32, 0.5);
 }
 
 #crownOffabel {
   display: none;
 }
 
+.coronitaGris {
+  max-height: 200px;
+  max-width: 200px;
+}
+
 .crownLabel {
   cursor: pointer;
+  
 }
 
 .crownLabel img.highlighted {
@@ -179,4 +220,21 @@
 }
 
 
-
+.changeOrientation {
+  position: absolute;
+  margin: 8vh;
+  background: linear-gradient(to bottom right, #353333, #000000);
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  padding: 0 1rem;
+  transition: box-shadow .2s ease-in-out;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
