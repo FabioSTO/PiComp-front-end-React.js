@@ -13,7 +13,7 @@ export const UserProvider = ({ children }) => {
   const [profilePic, setProfilePic] = useState(null);
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState('');
-  const [voted, setVoted] = useState('');
+  const [voted, setVoted] = useState(false);
 
   return (
     <UserContext.Provider value={{ id, setId, username, setUsername, isLogged, setIsLogged, 
