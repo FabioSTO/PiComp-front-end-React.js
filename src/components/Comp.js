@@ -125,6 +125,12 @@ function Comp() {
 
   }
 
+  const handleTestRecuento = (e) => {
+    e.preventDefault();
+
+    
+  }
+
 
   return (
     <div>
@@ -211,8 +217,10 @@ function Comp() {
 
       {/* LOGUEADO / SUBMITTED / VOTED */}
 
-      {isLogged && submitted && voted && <form className='compForm' id='compForm'>
+      {isLogged && submitted && voted && <form className='compForm' id='compForm' onSubmit={handleTestRecuento}>
         <h1 className='title-text'> Espera a que acaben las votaciones </h1>
+
+        <input className='boton' id='submit' type='submit' value='PRUEBA DE CÁLCULO DE VOTOS'/>
         
       </form> }
 
