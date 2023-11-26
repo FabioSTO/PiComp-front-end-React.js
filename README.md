@@ -9,7 +9,7 @@ React (front-end), Node (back-end) and MySql (database).
 
 Diagrama de la base de datos:
 
-<img src="images/PiCompDB.png" width="350">
+<img src="src/img/PiCompDBs.png" width="350">
 
 Crea de la base de datos:
 ```
