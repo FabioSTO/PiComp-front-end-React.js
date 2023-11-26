@@ -1,7 +1,7 @@
 # PiComp
-Creación de app web de publicación, valoración y competición de imágenes.
+Creación de app web de publicación, valoración y competición de imágenes como proyecto personal.
 
-React (front-end), Node (back-end) and MySql (database).
+React (front-end), Node (back-end), MySql (database) y AWS S3 (storage).
 
 # Prerrequisitos
 
